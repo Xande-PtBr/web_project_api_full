@@ -9,22 +9,32 @@ const userSchema = new mongoose.Schema({
     validate: (value) => validator.isEmail(value),
     nessage: "Email invalido",
   },
+
   password: {
     type: String,
     required: true,
     select: false,
   },
+
   name: {
     type: String,
-    default: "Jacques Cousteau",
+    minlength: 2,
+    maxlength: 30,
+    required: true,
   },
   about: {
     type: String,
-    default: "Explorer",
+    minlength: 2,
+    maxlength: 30,
+    required: true,
   },
   avatar: {
     type: String,
-    default: "https://some-default-link.com/avatar.png",
+    required: true,
+    validate: {
+      validator: (v) => validator.isURL(v),
+      message: "link invalido",
+    },
   },
 });
 

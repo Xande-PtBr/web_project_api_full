@@ -54,8 +54,18 @@ class Api {
       })
       .catch((err) => console.error(`Error: ${err.getMessage()}`));
   }
-
-  //--------pega informações do perfil
+  /*   getUserInfo(token) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      headers: { Authorization: `Bearer ${token}`, ...this._headers },
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        // se o servidor retornar um erro, rejeite a promessa
+      })
+      .catch((err) => console.error(`Error: ${err.getMessage()}`));
+  } */
 
   setUserInfo(data) {
     return fetch(`${this._baseUrl}/users/me`, {
@@ -170,5 +180,13 @@ const api = new Api({
     "Content-Type": "application/json",
   },
 });
+
+/* const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web-ptbr-cohort-14",
+  headers: {
+    authorization: "e255bcaf-9aa3-4e45-a23a-da684d7fa67f",
+    "Content-Type": "application/json",
+  },
+}); */
 
 export default api;

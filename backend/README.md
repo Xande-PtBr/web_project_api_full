@@ -1,1 +1,7 @@
-# Tripleten web_project_api_full
+# express
+
+# criando routes com express
+
+# criando models com express
+
+# criando controllers com express

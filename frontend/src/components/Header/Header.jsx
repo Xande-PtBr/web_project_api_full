@@ -12,6 +12,23 @@ const signOut = () => {
   setIsLoggedIn(false);
 };
 
+/* function ShowHideContent() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  return (
+    <div>
+      <button onClick={(hamburguer) => setIsVisible(!isVisible)}>
+        {isVisible ? "Hide content" : "Show content"}
+      </button>
+      {isVisible && (
+        <div>
+          <p>This is the content to show/hide.</p>
+        </div>
+      )}
+    </div>
+  );
+} */
+
 function Header(/* { isLoggedIn } */) {
   const location = useLocation();
 

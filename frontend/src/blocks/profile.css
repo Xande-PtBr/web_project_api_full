@@ -1,0 +1,166 @@
+.profile {
+  display: flex;
+  align-items: center;
+  max-width: 880px;
+  margin: 40px auto 50px;
+  color: #fff;
+  gap: 30px;
+}
+
+.profile__avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.profile__image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profile__edit-avatar-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+}
+
+.profile__edit-avatar-button:hover {
+  background-image: url("../images/EditAvatar.png");
+  background-position: center;
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profile__info {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.profile__info-name-edit-button {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 390px;
+  /*  min-width: 289px; */
+}
+
+.profile__info-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.profile__info-sobre-mim {
+  max-width: 87.69px;
+  /*  min-width: 67.7px; */
+  margin: 0;
+  font-size: 18px;
+  line-height: 21.78px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.profile__edit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  margin: 0 0 10px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.profile__edit-button:hover {
+  filter: grayscale(100%) brightness(50%);
+}
+
+.profile__add-button {
+  width: 100%;
+  max-width: 150px;
+  height: 50px;
+  margin-left: auto;
+  background-color: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.profile__add-button:hover {
+  filter: grayscale(100%) brightness(50%);
+}
+
+@media (max-width: 880px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile__info {
+    align-items: center;
+  }
+
+  .profile__add-button {
+    max-width: 584px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .profile {
+    margin: 0 auto;
+    padding: 42px 0 30px;
+  }
+
+  .profile__info-name-edit-button {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .profile__info-name {
+    margin-bottom: 14px;
+    font-size: 22px;
+    line-height: 26.63px;
+  }
+
+  .profile__info-sobre-mim {
+    width: 282px;
+    font-size: 14px;
+    line-height: 16.94px;
+    text-align: center;
+  }
+
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 20px;
+  }
+
+  .profile__add-button {
+    width: 282px;
+    height: 50px;
+    margin: 0 auto 0;
+    padding: 0;
+    background-color: black;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 1);
+  }
+}

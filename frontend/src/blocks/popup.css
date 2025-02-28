@@ -1,0 +1,423 @@
+.popup {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup__Container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 430px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.popup__title {
+  display: flex;
+  width: 358px;
+  margin: 34px auto 0;
+}
+
+.popup__close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -30px;
+  right: -30px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.popup__close:hover {
+  filter: grayscale(100%) brightness(50%);
+}
+
+.popup__opened {
+  display: flex;
+}
+
+.popup__input-name {
+  display: flex;
+  width: 358px;
+  margin: 54px 36px 0;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid rgb(194, 192, 192);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: left;
+}
+
+.popup__input-card-title {
+  display: flex;
+  width: 358px;
+  margin: 54px 36px 0;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid rgb(194, 192, 192);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: left;
+}
+
+.popup__input-sobre-mim {
+  display: flex;
+  width: 358px;
+  margin: 30px 36px 0;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid rgb(194, 192, 192);
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: left;
+}
+
+.popup__input-card-link-img {
+  display: flex;
+  width: 358px;
+  margin: 30px 36px 0;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid rgb(194, 192, 192);
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: left;
+}
+
+.popup__button-save {
+  display: flex;
+  justify-content: center;
+  margin: 48px 36px 36px;
+  padding: 0;
+  width: 358px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  border: none;
+  line-height: 50px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.popup__button-save:hover {
+  background-color: rgb(46, 46, 46);
+}
+
+.popup__button-new-card {
+  display: flex;
+  justify-content: center;
+  margin: 48px 36px 36px;
+  padding: 0;
+  width: 358px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  border: none;
+  line-height: 50px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.popup__button-new-card:hover {
+  background-color: rgb(46, 46, 46);
+}
+/*  --------------- popup error---------- */
+.popup__input_type_error {
+  border-bottom-color: red;
+}
+
+.popup__message-input-error {
+  display: none;
+  width: 358px;
+  height: 24px;
+  margin: 0 0 0 36px;
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  color: red;
+}
+
+.popup__button_disabled {
+  border: 1px solid rgba(0, 0, 0, 1);
+  background-color: #fff;
+  color: rgba(0, 0, 0, 1);
+  opacity: 0.2;
+}
+
+/*---------------popup image---------------------*/
+
+.popup__Container-image {
+  width: auto;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  max-width: 816px;
+  background-color: transparent;
+}
+
+.popup__title-image {
+  position: absolute;
+  bottom: -20px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  margin: 0;
+  padding: 0;
+}
+
+.popup__close-image {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -35px;
+  right: -30px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.popup__view-image {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border: none;
+  background-color: #fff;
+  margin: 0 auto;
+  width: 100%;
+}
+/*---------------Fim popup image---------------------*/
+
+/*-------- popup confirmation delete ----------*/
+
+.popup__form-confirmation-delete {
+  width: 430px;
+  height: 181px;
+}
+
+.popup__button-confirmation-delete {
+  display: flex;
+  justify-content: center;
+  margin: 38px auto 36px;
+  padding: 0;
+  width: 358px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  border: none;
+  line-height: 50px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*----------------- popup form edit avatar -----------------*/
+
+.popup__form-edit-avatar {
+  max-width: 430px;
+  max-height: 272px;
+}
+
+.popup__form-input {
+  width: 358px;
+  margin: 54px 36px 0 36px;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid rgb(194, 192, 192);
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: left;
+}
+
+.popup__button-save-avatar {
+  margin: 48px 36px 36px 36px;
+}
+
+/*---------------Fim popup form edit avatar---------------------*/
+
+/*--------------- inicio popup infoTooltip ---------------------*/
+
+.popup__form-infoTooltip-register {
+  width: 430px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.popup__image-infoTooltip-sucess {
+  width: 120px;
+  height: 120px;
+  margin: 50px auto 32px;
+}
+
+.popup__message-infoTooltip-p1 {
+  width: 358px;
+  margin: 0 auto 20px;
+  font-family: "Inter" Arial, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  text-align: center;
+}
+.popup__message-infoTooltip-p2 {
+  width: 358px;
+  margin: 0 auto 60px;
+  font-family: "Inter" Arial, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  text-align: center;
+}
+
+/*---------------Fim popup infoTooltip---------------------*/
+
+@media (max-width: 544px) {
+  .popup {
+    width: 100%;
+  }
+
+  .popup__Container {
+    width: 282px;
+  }
+
+  .popup__Container-image {
+    min-width: 282px;
+    margin: 0 auto;
+  }
+
+  .popup__title {
+    width: 238px;
+    margin: 25px auto 0;
+  }
+
+  .popup__close {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: -45px;
+    left: 256px;
+  }
+
+  .popup__card-close {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: -45px;
+    left: 256px;
+  }
+
+  .popup__imput-name {
+    width: 238px;
+    margin: 76px auto 0;
+  }
+
+  .popup__input-card-title {
+    width: 238px;
+    margin: 76px auto 0;
+  }
+
+  .popup__imput-sobre-mim {
+    width: 238px;
+    margin: 30px auto 0;
+  }
+
+  .popup__input-card-link-img {
+    width: 238px;
+    margin: 30px auto 0;
+  }
+
+  .popup__button-save {
+    display: flex;
+    justify-content: center;
+    margin: 46px 22px 25px;
+    padding: 0;
+    width: 238px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 1);
+    border: none;
+    line-height: 50px;
+    border-radius: 2px;
+  }
+
+  .popup__button-new-card {
+    display: flex;
+    justify-content: center;
+    margin: 46px 22px 25px;
+    padding: 0;
+    width: 238px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 1);
+    border: none;
+    line-height: 50px;
+    border-radius: 2px;
+  }
+  .popup__view-image {
+    margin: 0 auto;
+  }
+
+  .popup__form-infoTooltip-register {
+    width: 280px;
+  }
+
+  /*--------------- inicio popup infoTooltip ---------------------*/
+
+  .popup__image-infoTooltip-sucess {
+    width: 120px;
+    height: 120px;
+    margin: 50px auto 32px;
+  }
+
+  .popup__message-infoTooltip-p1 {
+    width: 244px;
+    margin: 0 auto 20px;
+  }
+  .popup__message-infoTooltip-p2 {
+    width: 244px;
+    margin: 0 auto 60px;
+  }
+}

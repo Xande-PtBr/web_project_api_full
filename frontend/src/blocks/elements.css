@@ -1,0 +1,87 @@
+.elements {
+  max-width: 880px;
+  /*  min-height: 880px; */
+  margin: 36px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 17px;
+  row-gap: 20px;
+}
+
+.elements__cards-list {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.elements__box {
+  display: flex;
+  max-width: 282px;
+  height: 361px;
+  margin: 0;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px 10px;
+  position: relative;
+}
+
+.elements__image {
+  max-width: 282px;
+  min-height: 282px;
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0px 0px;
+  margin: 0;
+}
+
+.elements__contaner-title-like {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 15px 31px 21px;
+  box-sizing: border-box;
+}
+
+.elements__title {
+  margin: 0;
+  max-width: 246px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.elements__like {
+  width: 21px;
+  height: 19px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-image: url("../images/like.png");
+}
+
+.elements__like-active {
+  background-image: url("../images/liked.png");
+}
+
+.elements__trash {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 880px) {
+  .elements {
+    width: 584px;
+  }
+}
+
+@media (max-width: 720px) {
+  .elements {
+    max-width: 282px;
+  }
+}

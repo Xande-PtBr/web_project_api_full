@@ -1,0 +1,103 @@
+.register__title-enter {
+  font-family: Inter;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29.05px;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto 50px;
+}
+
+.register__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 358px;
+  margin: 60px auto 0;
+  padding: 0;
+}
+
+.register__link-login {
+  width: 358px;
+  height: 17px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.register__register-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.register__input-email {
+  width: 358px;
+  height: 27px;
+  margin: 0 auto 30px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(204, 204, 204, 1);
+  color: #fff;
+}
+
+.register__input-password {
+  width: 358px;
+  height: 27px;
+  margin: 0 auto 216px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(204, 204, 204, 1);
+  color: #fff;
+}
+
+.register__button-link {
+  width: 358px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 2px;
+  border: none;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  background: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .register__title-enter {
+    width: 260px;
+    margin: 0 auto 40px;
+  }
+
+  .register__form {
+    width: 260px;
+    margin: 40px auto 0;
+  }
+
+  .register__input-email {
+    width: 260px;
+  }
+
+  .register__input-password {
+    width: 260px;
+    margin: 0 auto 173px;
+  }
+
+  .register__button-link {
+    width: 260px;
+    margin: 0 auto;
+  }
+
+  .register__link-login {
+    width: 260px;
+  }
+}

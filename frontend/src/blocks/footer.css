@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  justify-content: start;
+  max-width: 880px;
+  width: 100%;
+  margin: 67px auto 60px;
+  color: rgba(84, 84, 84, 1);
+}
+
+.footer__copyright {
+  margin: 0;
+}
+
+@media (max-width: 976px) {
+  .footer {
+    max-width: 581px;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer {
+    max-width: 282px;
+    margin: 50px auto 0;
+  }
+}

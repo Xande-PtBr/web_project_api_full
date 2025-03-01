@@ -4,7 +4,7 @@ const { validateSignup, validateSignin } = require("../middlewares/validation");
 
 const router = express.Router();
 
-app.get("/crash-test", () => {
+router.get("/crash-test", () => {
   setTimeout(() => {
     throw new Error("O servidor travará agora");
   }, 0);

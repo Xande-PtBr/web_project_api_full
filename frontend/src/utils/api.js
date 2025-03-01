@@ -174,7 +174,7 @@ class Api {
 // outros métodos para trabalhar com a API
 
 const api = new Api({
-  baseUrl: "https://around-api.pt-br.tripleten-services.com/v1",
+  baseUrl: "https://web-project-api-full-6rlu.onrender.com",
   headers: {
     authorization: "e5cf33dd-4022-4526-883f-23d5af256088",
     "Content-Type": "application/json",

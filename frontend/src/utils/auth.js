@@ -1,4 +1,4 @@
-export const BASE_URL = "https://se-register-api.en.tripleten-services.com/v1";
+export const BASE_URL = "https://web-project-api-full-6rlu.onrender.com";
 
 export const getUserAuth = (token) => {
   return fetch(`${BASE_URL}/users/me`, {

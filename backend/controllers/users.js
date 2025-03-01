@@ -53,7 +53,7 @@ const createUser = (req, res, next) => {
 const login = (req, res, next) => {
   const { email, password } = req.body;
 
-  User.findOne({ email })
+  Users.findOne({ email })
     .select("+password")
     .then((user) => {
       if (!user) {
@@ -82,7 +82,7 @@ const login = (req, res, next) => {
 const getUserProfile = (req, res, next) => {
   const userId = req.user._id; //obtendo o id do usuário
 
-  User.findById(userId)
+  Users.findById(userId)
     .then((user) => {
       if (!user) {
         throw new NotFoundError("Usuário não encontrado");

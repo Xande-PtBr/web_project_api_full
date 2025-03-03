@@ -176,7 +176,7 @@ class Api {
 const api = new Api({
   baseUrl: "https://web-project-api-full-6rlu.onrender.com",
   headers: {
-    authorization: "e5cf33dd-4022-4526-883f-23d5af256088",
+    authorization: "Bearer e5cf33dd-4022-4526-883f-23d5af256088",
     "Content-Type": "application/json",
   },
 });

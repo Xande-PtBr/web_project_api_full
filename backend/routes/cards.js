@@ -7,10 +7,11 @@ const {
   likeCard,
   dislikeCard,
 } = require("../controllers/cards");
+const auth = require("../middlewares/auth");
 
 router.get("/", getCards); //------ pesquisa cards
 
-router.post("/", createCard); //------ cria card
+router.post("/", auth, createCard); //------ cria card
 
 router.delete("/:cardId", deleteCard); //------ delete card
 

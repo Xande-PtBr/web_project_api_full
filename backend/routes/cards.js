@@ -13,10 +13,10 @@ router.get("/", getCards); //------ pesquisa cards
 
 router.post("/", auth, createCard); //------ cria card
 
-router.delete("/:cardId", deleteCard); //------ delete card
+router.delete("/:cardId", auth, deleteCard); //------ delete card
 
-router.put("/:cardId/likes", likeCard); //------ add like do card
+router.put("/:cardId/likes", auth, likeCard); //------ add like do card
 
-router.delete("/:cardId/likes", dislikeCard); //--remove like do card
+router.delete("/:cardId/likes", auth, dislikeCard); //--remove like do card
 
 module.exports = router;

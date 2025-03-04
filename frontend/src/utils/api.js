@@ -1,3 +1,4 @@
+import { getToken } from "./token";
 class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
@@ -155,7 +156,7 @@ class Api {
   addNewCard(name, link) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
-      headers: this._headers,
+      /*  headers: this._headers, */
       body: JSON.stringify({
         name,
         link,
@@ -171,22 +172,18 @@ class Api {
   }
 }
 
+const getHeaders = () => {
+  const token = getToken(); // Pega o token atualizado
+  return {
+    authorization: token ? `Bearer ${token}` : "",
+    "Content-Type": "application/json",
+  };
+};
 // outros métodos para trabalhar com a API
 
 const api = new Api({
   baseUrl: "https://web-project-api-full-6rlu.onrender.com",
-  headers: {
-    authorization: "Bearer e5cf33dd-4022-4526-883f-23d5af256088",
-    "Content-Type": "application/json",
-  },
+  headers: getHeaders(),
 });
-
-/* const api = new Api({
-  baseUrl: "https://around.nomoreparties.co/v1/web-ptbr-cohort-14",
-  headers: {
-    authorization: "e255bcaf-9aa3-4e45-a23a-da684d7fa67f",
-    "Content-Type": "application/json",
-  },
-}); */
 
 export default api;

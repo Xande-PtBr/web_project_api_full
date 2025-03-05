@@ -33,8 +33,7 @@ function EditAvatar() {
         required
         // Atualiza o link da imagem (avatar) quando a entrada for alterada
         value={avatar}
-        // Atualiza o link da imagem (avatar) quando a entrada for alterada
-        onChange={handleSubmit}
+        onChange={handleAvatarChange}
       />
       <span
         id="avatar-input-error"

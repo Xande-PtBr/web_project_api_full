@@ -14,6 +14,7 @@ function EditAvatar() {
   // Impede o comportamento padrão de envio do formulário
   // e chama a função handleUpdateAvatar
   // Renderiza o formulário
+  // Atualiza o link da imagem (avatar) quando a entrada for alterada
 
   return (
     <form

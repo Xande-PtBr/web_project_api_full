@@ -2,10 +2,13 @@ import { useState, useContext } from "react";
 import CurrentUserContext from "../../../../../../contexts/CurrentUserContext";
 
 function EditAvatar() {
-  CONST[(avatar, setAvatar)] = useState(currentUser.avatar);
+  const [avatar, setAvatar] = useState(currentUser.avatar);
   const userContext = useContext(CurrentUserContext); // Obtém o objeto de usuário atual
   const { currentUser, handleUpdateAvatar } = userContext;
 
+  const handleAvatarChange = (event) => {
+    setAvatar(event.target.value); // Atualiza o link da imagem (avatar) quando a entrada for alterada
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     handleUpdateAvatar({ avatar: event.target.avatar.value }); // Atualiza as informações do usuário

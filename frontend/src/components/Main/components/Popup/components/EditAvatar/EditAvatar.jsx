@@ -29,7 +29,7 @@ function EditAvatar() {
         placeholder="Link da imagem"
         required
         // Atualiza o link da imagem (avatar) quando a entrada for alterada
-        defaultValue={currentUser.avatar}
+        value={avatar}
         // Atualiza o link da imagem (avatar) quando a entrada for alterada
         onChange={handleSubmit}
       />

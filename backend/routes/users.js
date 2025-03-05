@@ -12,7 +12,7 @@ const {
   deleteUser,
 } = require("../controllers/users");
 
-router.get("/users/me", auth, getUserProfile);
+router.get("/me", auth, getUserProfile);
 
 router.get("/:userId", getUserById);
 
@@ -20,10 +20,10 @@ router.get("/", getUsers);
 
 router.post("/", createUser);
 
-router.patch("/me", updateUser);
+router.patch("/me", auth, updateUser);
 
-router.patch("/me/avatar", updateAvatar);
+router.patch("/me/avatar", auth, updateAvatar);
 
-router.delete("/:userId", deleteUser);
+router.delete("/:userId", auth, deleteUser);
 
 module.exports = router;

@@ -2,16 +2,16 @@ import { useState, useContext } from "react";
 import CurrentUserContext from "../../../../../../contexts/CurrentUserContext";
 
 function EditAvatar() {
-  const [avatar, setAvatar] = useState(currentUser.avatar);
   const userContext = useContext(CurrentUserContext); // Obtém o objeto de usuário atual
   const { currentUser, handleUpdateAvatar } = userContext;
+  const [avatar, setAvatar] = useState(currentUser.avatar);
 
   const handleAvatarChange = (event) => {
     setAvatar(event.target.value); // Atualiza o link da imagem (avatar) quando a entrada for alterada
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleUpdateAvatar({ avatar: event.target.avatar.value }); // Atualiza as informações do usuário
+    handleUpdateAvatar({ avatar }); // Atualiza as informações do usuário
   };
 
   // Impede o comportamento padrão de envio do formulário

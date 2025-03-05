@@ -1,6 +1,25 @@
-export default function EditAvatar() {
+import { useState, useContext } from "react";
+import CurrentUserContext from "../../../../contexts/CurrentUserContext";
+
+function EditAvatar() {
+  CONST[(avatar, setAvatar)] = useState(currentUser.avatar);
+  const userContext = useContext(CurrentUserContext); // Obtém o objeto de usuário atual
+  const { currentUser, handleUpdateAvatar } = userContext;
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleUpdateAvatar({ avatar: event.target.avatar.value }); // Atualiza as informações do usuário
+  };
+
+  // Impede o comportamento padrão de envio do formulário
+  // e chama a função handleUpdateAvatar
+  // Renderiza o formulário
+
   return (
-    <form className="popup__form popup__form-edit-avatar">
+    <form
+      className="popup__form popup__form-edit-avatar"
+      onSubmit={handleSubmit}
+    >
       <input
         type="url"
         className="popup__form-input popup__input-avatar"
@@ -8,6 +27,10 @@ export default function EditAvatar() {
         name="avatar"
         placeholder="Link da imagem"
         required
+        // Atualiza o link da imagem (avatar) quando a entrada for alterada
+        defaultValue={currentUser.avatar}
+        // Atualiza o link da imagem (avatar) quando a entrada for alterada
+        onChange={handleSubmit}
       />
       <span
         id="avatar-input-error"
@@ -22,3 +45,5 @@ export default function EditAvatar() {
     </form>
   );
 }
+
+export default EditAvatar;

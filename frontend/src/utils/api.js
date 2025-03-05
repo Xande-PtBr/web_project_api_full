@@ -23,12 +23,7 @@ class Api {
   profilePictureUpdate(avatar) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "content-Security-policy": "default-src 'self' *.tripleten.com",
-        Authorization: `Bearer ${token}`,
-      },
+      headers: this._headers,
       body: JSON.stringify({
         avatar,
       }),

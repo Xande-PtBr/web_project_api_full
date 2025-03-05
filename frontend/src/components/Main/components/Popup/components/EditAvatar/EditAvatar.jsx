@@ -11,7 +11,7 @@ function EditAvatar() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleUpdateAvatar({ avatar }); // Atualiza as informações do usuário
+    handleUpdateAvatar(avatar); // Atualiza as informações do usuário
   };
 
   // Impede o comportamento padrão de envio do formulário

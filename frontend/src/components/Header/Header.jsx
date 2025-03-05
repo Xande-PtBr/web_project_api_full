@@ -10,6 +10,7 @@ import closeHamburguer from "../../images/closeHamburguer.png";
 const signOut = () => {
   removeToken();
   setIsLoggedIn(false);
+  navigate("/signin");
 };
 
 /* function ShowHideContent() {

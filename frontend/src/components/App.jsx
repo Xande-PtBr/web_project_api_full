@@ -187,7 +187,7 @@ function App() {
       }}
     >
       <div className="page">
-        <Header setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
+        <Header />
         <Routes>
           <Route
             path="/signin"

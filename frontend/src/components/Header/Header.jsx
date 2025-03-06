@@ -6,31 +6,26 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { removeToken } from "../../utils/token";
 import hamburguer from "../../images/hamburguerMenu.png";
 import closeHamburguer from "../../images/closeHamburguer.png";
-
-const signOut = () => {
-  removeToken();
-  setIsLoggedIn(false);
-  navigate("/");
-};
+import { useNavigate } from "react-router-dom";
 
 /* function ShowHideContent() {
   const [isVisible, setIsVisible] = useState(false);
-
+  
   return (
     <div>
-      <button onClick={(hamburguer) => setIsVisible(!isVisible)}>
-        {isVisible ? "Hide content" : "Show content"}
-      </button>
-      {isVisible && (
-        <div>
-          <p>This is the content to show/hide.</p>
-        </div>
+    <button onClick={(hamburguer) => setIsVisible(!isVisible)}>
+    {isVisible ? "Hide content" : "Show content"}
+    </button>
+    {isVisible && (
+      <div>
+      <p>This is the content to show/hide.</p>
+      </div>
       )}
-    </div>
-  );
-} */
+      </div>
+      );
+      } */
 
-function Header(/* { isLoggedIn } */) {
+function Header() {
   const location = useLocation();
 
   const from = location.state?.from || "/";
@@ -44,11 +39,18 @@ function Header(/* { isLoggedIn } */) {
     currentPage = "/";
   }
 
-  const { currentUser } = useContext(CurrentUserContext);
+  const { currentUser, setIsLoggedIn } = useContext(CurrentUserContext);
   const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth > 720);
   const menuHamburguerClosed = hamburguer;
   const menuHamburguerOpen = closeHamburguer;
   const isHomePage = currentPage === "/";
+  const navigate = useNavigate();
+
+  const signOut = () => {
+    removeToken();
+    setIsLoggedIn(false);
+    navigate("/");
+  };
 
   return (
     <>

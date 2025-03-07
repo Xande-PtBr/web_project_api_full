@@ -2,13 +2,12 @@ import { getToken } from "./token";
 class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
-    this._headers = options.headers;
   }
 
   //------------pega as cards da API
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
-      headers: this._headers,
+      headers: getHeaders(),
     })
       .then((res) => {
         if (res.ok) {
@@ -23,7 +22,7 @@ class Api {
   profilePictureUpdate(avatar) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      headers: this._headers,
+      headers: getHeaders(),
       body: JSON.stringify({
         avatar,
       }),
@@ -40,7 +39,7 @@ class Api {
   //--------pega informações do perfil
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
-      headers: this._headers,
+      headers: getHeaders(),
     })
       .then((res) => {
         if (res.ok) {
@@ -52,7 +51,7 @@ class Api {
   }
   /*   getUserInfo(token) {
     return fetch(`${this._baseUrl}/users/me`, {
-      headers: { Authorization: `Bearer ${token}`, ...this._headers },
+      headers: { Authorization: `Bearer ${token}`, ...getHeaders() },
     })
       .then((res) => {
         if (res.ok) {
@@ -66,7 +65,7 @@ class Api {
   setUserInfo(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
-      headers: this._headers,
+      headers: getHeaders(),
       body: JSON.stringify({
         name: data.name,
         about: data.about,
@@ -91,7 +90,7 @@ class Api {
   isLiked(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",
-      headers: this._headers,
+      headers: getHeaders(),
     })
       .then((res) => {
         if (res.ok) {
@@ -105,7 +104,7 @@ class Api {
   deleteLike(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "DELETE",
-      headers: this._headers,
+      headers: getHeaders(),
     })
       .then((res) => {
         if (res.ok) {
@@ -119,7 +118,7 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: "DELETE",
-      headers: this._headers,
+      headers: getHeaders(),
     })
       .then((res) => {
         if (res.ok) {
@@ -133,7 +132,7 @@ class Api {
   editUserInfo(name, about) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
-      headers: this._headers,
+      headers: getHeaders(),
       body: JSON.stringify({
         name,
         about,
@@ -151,7 +150,7 @@ class Api {
   addNewCard(name, link) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
-      headers: this._headers,
+      headers: getHeaders(),
       body: JSON.stringify({
         name,
         link,
@@ -179,7 +178,7 @@ const getHeaders = () => {
 const api = new Api({
   /*  baseUrl: "http://localhost:3001", */
   baseUrl: "https://web-project-api-full-6rlu.onrender.com",
-  headers: getHeaders(),
+  /* headers: getHeaders(), */
 });
 
 export default api;

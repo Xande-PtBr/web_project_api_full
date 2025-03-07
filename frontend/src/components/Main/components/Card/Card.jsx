@@ -10,7 +10,7 @@ function Card(props) {
   const { currentUser } = useContext(CurrentUserContext);
   // VERIFICAR SE O ID DO USUARIO ATUAL ESTÁ NO ARRAY DE LIKES DO CARD
   const isLiked = likes.some((like) => like === currentUser._id);
-  console.log(isLiked, "isLiked");
+
   // Verificar se o usuário atual “curtiu” o cartão
   const cardLikeButtonClassName = `elements__like ${
     isLiked ? "elements__like-active" : ""

@@ -6,7 +6,6 @@ export default function ProtectedRoute({ children, anonymous = false }) {
   const location = useLocation();
   const from = location.state?.from || "/";
   const { isLoggedIn } = useContext(AppContext);
-  console.log(isLoggedIn, anonymous);
 
   if (anonymous && isLoggedIn) {
     return <Navigate to={from} />;

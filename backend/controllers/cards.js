@@ -52,10 +52,8 @@ const likeCard = (req, res) => {
       error.status = 500;
       throw error;
     })
-    .then(() => {
-      return res.status(200).send({
-        message: "Like efetuado com sucesso",
-      });
+    .then((newCard) => {
+      return res.status(200).send(newCard);
     })
     .catch((error) => {
       console.error("likeCard Error:", error);
@@ -76,10 +74,8 @@ const dislikeCard = (req, res) => {
       error.status = 500;
       throw error;
     })
-    .then(() => {
-      return res.status(200).send({
-        message: "Dislike efetuado com sucesso",
-      });
+    .then((newCard) => {
+      return res.status(200).send(newCard);
     })
     .catch((error) => {
       console.error("likeCard Error:", error);

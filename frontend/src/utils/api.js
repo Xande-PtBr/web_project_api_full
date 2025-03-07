@@ -177,6 +177,7 @@ const getHeaders = () => {
 // outros métodos para trabalhar com a API
 
 const api = new Api({
+  /*  baseUrl: "http://localhost:3001", */
   baseUrl: "https://web-project-api-full-6rlu.onrender.com",
   headers: getHeaders(),
 });

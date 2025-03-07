@@ -17,7 +17,6 @@ import signupFailed from "../images/signupFailed.png";
 
 function App() {
   const [cards, setCards] = useState([]);
-
   const [currentUser, setCurrentUser] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [popup, setPopup] = useState(null);
@@ -30,8 +29,8 @@ function App() {
       return;
     }
     auth.getUserAuth(jwt).then((response) => {
-      const email = { email: response.data.email };
-      setCurrentUser((prevData) => ({ ...prevData, ...email }));
+      /*    const email = { email: response.data.email }; */
+      setCurrentUser((prevData) => ({ ...prevData, ...response }));
       setIsLoggedIn(true);
       navigate("/");
     });
@@ -57,16 +56,18 @@ function App() {
       const newCards = cards.filter((c) => c._id !== card._id);
       setCards(newCards);
     });
-    // Verificar mais uma vez se esse cartão já foi curtido
+    // Verificar mais uma vez se esse cartão já foi curtido.
   }
 
   async function handleCardLike(card) {
     // Verificar mais uma vez se esse cartão já foi curtido
-    const isLiked = card.isLiked;
+
+    const isLiked = card.likes.some((like) => like === currentUser._id);
     // Enviar uma solicitação para a API e obter os dados do cartão atualizados
     await api
       .changeLikeCardStatus(card._id, isLiked)
       .then((newCard) => {
+        console.log(newCard);
         setCards((state) =>
           state.map((currentCard) =>
             currentCard._id === card._id ? newCard : currentCard
